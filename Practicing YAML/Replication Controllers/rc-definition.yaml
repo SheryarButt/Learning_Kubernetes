@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-rc
+spec:
+  replicas: <Numeber of Replicas>
+  selector:
+    app: myapp-pod
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp-pod
+    spec:
+      containers:
+        - name: myapp-pod
+          image: <Image>
+          ports:
+            - containerPort: <Port>
