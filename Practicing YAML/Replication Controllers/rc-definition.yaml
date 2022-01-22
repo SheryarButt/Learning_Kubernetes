@@ -4,8 +4,6 @@ metadata:
   name: myapp-rc
 spec:
   replicas: <Numeber of Replicas>
-  selector:
-    app: myapp-pod
   template:
     metadata:
       name: myapp-pod
