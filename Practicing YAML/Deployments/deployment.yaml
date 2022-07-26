@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    tier: frontend
+    app: nginix
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 3
+  template:
+    metadata:
+      name: nginix
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: nginix
+        image: nginix
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
